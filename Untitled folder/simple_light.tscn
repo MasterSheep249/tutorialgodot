@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://qpv514t0ume3"]
+
+[ext_resource type="Texture2D" uid="uid://ct2nfr4rvu4pt" path="res://graphics/objects/light.png" id="1_l2qai"]
+[ext_resource type="Texture2D" uid="uid://bts3hre08iohv" path="res://graphics/lights/textures/circle.png" id="2_0a0pr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ljemb"]
+radius = 15.0353
+height = 186.433
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jkh5o"]
+polygon = PackedVector2Array(7, -18, 79, -18, 94, -12, 98, -4, 99, 6, 92, 12, 76, 14, 75, -4, -70, -4, -72, 17, -92, 11, -100, -1, -95, -8, -87, -15, -78, -17)
+
+[node name="SimpleLight" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="lightimage" type="Sprite2D" parent="."]
+texture = ExtResource("1_l2qai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = -1.58291
+shape = SubResource("CapsuleShape2D_ljemb")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 7.12
+range_z_max = 2048
+shadow_enabled = true
+texture = ExtResource("2_0a0pr")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_jkh5o")

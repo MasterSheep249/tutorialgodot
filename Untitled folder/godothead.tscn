@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi77fhiloupmi"]
+
+[ext_resource type="Texture2D" uid="uid://dq2pcpaaxm0i1" path="res://icon.svg" id="1_pun72"]
+[ext_resource type="Script" path="res://Godotheadicon.gd" id="2_mdgi0"]
+
+[node name="Godothead" type="Node2D"]
+
+[node name="Godotheadicon" type="Sprite2D" parent="."]
+position = Vector2(314, 296)
+texture = ExtResource("1_pun72")
+script = ExtResource("2_mdgi0")

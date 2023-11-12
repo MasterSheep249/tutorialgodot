@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://det457sllseq2"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_kfis7"]
+[ext_resource type="Texture2D" uid="uid://bw4y1i8kah11g" path="res://graphics/player/player.png" id="2_qundy"]
+[ext_resource type="Texture2D" uid="uid://bts3hre08iohv" path="res://graphics/lights/textures/circle.png" id="3_1m64c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sbd2i"]
+radius = 64.195
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fpp7p"]
+polygon = PackedVector2Array(-64, -58, -40, -62, -20, -60, -12, -61, -6, -53, 3, -45, 11, -30, 21, -28, 38, -13, 48, -12, 58, -6, 71, -5, 76, 3, 85, 0, 85, 7, 92, 6, 97, 19, 93, 30, 90, 36, 83, 29, 85, 38, 76, 37, 74, 31, 71, 32, 70, 37, 58, 43, 58, 52, 54, 53, 28, 52, 21, 45, 21, 39, 5, 39, -11, 47, -43, 59, -55, 61, -72, 56, -75, 48, -79, 39, -87, 31, -91, 15, -98, 2, -100, -9, -97, -27, -92, -29, -87, -45, -81, -47)
+
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 31
+script = ExtResource("1_kfis7")
+
+[node name="Playerimage" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.5708
+texture = ExtResource("2_qundy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-38, 1)
+shape = SubResource("CircleShape2D_sbd2i")
+
+[node name="LaserDelay" type="Timer" parent="."]
+wait_time = 0.024
+one_shot = true
+
+[node name="GrenadeDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Laserpoint1" type="Marker2D" parent="."]
+position = Vector2(88, 21)
+
+[node name="Laserpoint2" type="Marker2D" parent="."]
+position = Vector2(79, 12)
+
+[node name="Laserpoint3" type="Marker2D" parent="."]
+position = Vector2(79, 27)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(1, 0.815686, 0.784314, 1)
+energy = 1.28
+texture = ExtResource("3_1m64c")
+texture_scale = 2.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_fpp7p")
+
+[connection signal="timeout" from="LaserDelay" to="." method="_on_delay_timeout"]
+[connection signal="timeout" from="GrenadeDelay" to="." method="_on_grenade_delay_timeout"]

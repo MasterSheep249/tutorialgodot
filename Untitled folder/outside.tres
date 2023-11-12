@@ -1,0 +1,85 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bu7g36nexqxh7"]
+
+[ext_resource type="Texture2D" uid="uid://8nd2gggnorlb" path="res://graphics/tilesets/outside_walls.png" id="1_7suxi"]
+[ext_resource type="Texture2D" uid="uid://8pbh1yhrqung" path="res://graphics/tilesets/soil.png" id="2_kqcij"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rv7eg"]
+resource_name = "walls"
+texture = ExtResource("1_7suxi")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-61, -68, 57, -64, 57, 195, -57, 195)
+1:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(195, -58, 195, 58, 59, 58, 57, -62)
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(68, -61, 64, 57, -195, 57, -195, -57)
+2:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(58, 195, -58, 195, -58, 59, 62, 57)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-68, 61, -64, -57, 195, -57, 195, 57)
+1:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-58, -195, 58, -195, 58, -59, -62, -57)
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(61, 68, -57, 64, -57, -195, 57, -195)
+2:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-195, 58, -195, -58, -59, -58, -57, 62)
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ta1v"]
+resource_name = "soil"
+texture = ExtResource("2_kqcij")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+tile_size = Vector2i(390, 390)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rv7eg")
+sources/1 = SubResource("TileSetAtlasSource_4ta1v")
